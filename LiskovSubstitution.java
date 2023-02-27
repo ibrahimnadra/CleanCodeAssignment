@@ -39,18 +39,19 @@ class Square extends Rectangle {
 class LiskovSubstitution {
 
   private static Rectangle getNewRectangle() {
-    // it can be an object returned by some factory ...
+    //the rectangleObject (base) is substituted by object of square(derived) class 
     return new Square();
   }
 
   public static void main(String args[]) {
-    Rectangle r = LiskovSubstitution.getNewRectangle();
-
-    r.setWidth(5);
-    r.setHeight(10);
+  
+    Rectangle rectangleObject = LiskovSubstitution.getNewRectangle();
+    rectangleObject.setWidth(5);
+    rectangleObject.setHeight(10);
+    
     // user knows that r it's a rectangle.
     // It assumes that he's able to set the width and height as for the base class
-
-    System.out.println(r.getArea());
+    System.out.println(rectangleObject.getArea());
+    
   }
 }
